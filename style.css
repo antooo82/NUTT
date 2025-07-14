@@ -1,0 +1,146 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5; /* Un gris muy claro, similar al del fondo de la imagen */
+    margin: 20px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+.container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor principal */
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo para que no se extienda demasiado */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los bloques de año se envuelvan */
+    gap: 30px; /* Espacio entre los bloques de año */
+    justify-content: center;
+}
+
+h1 {
+    width: 100%; /* El título ocupa todo el ancho */
+    text-align: center;
+    color: #5d3587; /* Un morado oscuro similar al título de la imagen */
+    margin-bottom: 40px;
+    font-size: 2.2em;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+    color: #7B4B9D; /* Un morado intermedio para los títulos de año */
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    padding: 10px 0;
+    border-bottom: 2px solid #D6BEEF; /* Línea separadora para el año */
+}
+
+h3 {
+    background-color: #D6BEEF; /* Fondo lila claro para el título del semestre */
+    color: #5d3587; /* Texto morado oscuro para el título del semestre */
+    padding: 15px;
+    margin: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    font-size: 1.3em;
+    text-align: center;
+}
+
+.year-block {
+    flex: 1; /* Permite que los bloques de año crezcan y ocupen espacio */
+    min-width: 450px; /* Ancho mínimo para cada bloque de año */
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espacio entre los semestres dentro de un año */
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #FFF0F5; /* Fondo rosa muy claro para agrupar los años */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+
+.semester-box {
+    background-color: #e6e6fa; /* Lavanda para el fondo del semestre */
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Asegura que el borde redondeado del encabezado se aplique correctamente */
+}
+
+.course-list {
+    padding: 15px;
+}
+
+.course-item {
+    background-color: #f8f8ff; /* Blanco grisáceo para los ítems de curso */
+    border: 1px solid #D6BEEF; /* Borde lila claro */
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    color: #444;
+}
+
+.course-item:last-child {
+    margin-bottom: 0;
+}
+
+.course-name {
+    flex-grow: 1;
+    margin: 0;
+    font-weight: bold;
+}
+
+.course-credits {
+    margin: 0;
+    color: #666;
+    font-size: 0.85em;
+    text-align: right;
+    min-width: 40px; /* Asegura que los créditos tengan un ancho mínimo */
+}
+
+/* Responsivo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .year-block {
+        min-width: 95%; /* Ocupa casi todo el ancho disponible */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        padding: 12px;
+    }
+
+    .course-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px 12px;
+    }
+
+    .course-credits {
+        width: 100%;
+        text-align: left;
+        margin-top: 5px;
+    }
+}
