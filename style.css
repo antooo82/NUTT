@@ -74,7 +74,7 @@ h3 {
     padding: 15px;
 }
 
-/* Estilo para cada ítem de curso */
+/* Estilo para cada ítem de curso - ¡Ahora clickeable! */
 .course-item {
     background-color: #f8f8ff; /* Blanco grisáceo para los ítems de curso */
     border: 1px solid #D6BEEF; /* Borde lila claro */
@@ -82,32 +82,33 @@ h3 {
     padding: 10px 15px;
     margin-bottom: 10px;
     display: flex;
-    align-items: center; /* Alinea verticalmente el checkbox y el texto */
+    justify-content: space-between;
+    align-items: center;
     font-size: 0.95em;
     color: #444;
+    cursor: pointer; /* Indica que es clickeable */
+    transition: background-color 0.3s ease; /* Suaviza el cambio de color */
 }
 
 .course-item:last-child {
     margin-bottom: 0;
 }
 
-.course-item label {
-    display: flex;
-    align-items: center;
-    width: 100%; /* Asegura que la etiqueta ocupe todo el ancho */
-    cursor: pointer; /* Indica que es clickeable */
+.course-item:hover {
+    background-color: #f0f0ff; /* Pequeño cambio al pasar el mouse */
 }
 
-.course-item input[type="checkbox"] {
-    margin-right: 10px;
-    transform: scale(1.2); /* Hace el checkbox un poco más grande */
-}
-
-/* Estilo para cuando un curso está aprobado */
+/* Estilo para cuando un curso está aprobado (línea tachada) */
 .course-item.approved {
     background-color: #d4edda; /* Un verde claro para aprobado */
     border-color: #28a745; /* Borde verde más oscuro */
     color: #155724; /* Texto verde oscuro */
+}
+
+.course-item.approved .course-name {
+    text-decoration: line-through; /* La línea tachada */
+    font-weight: normal; /* Opcional: hace que el texto tachado sea menos grueso */
+    color: #333; /* Un poco más oscuro que el texto normal para que se vea el tachado */
 }
 
 .course-name {
@@ -170,6 +171,7 @@ h3 {
     background-color: #5d3587;
 }
 
+/* Estilo para cada ítem de electiva - Siguen usando checkbox */
 .elective-item {
     background-color: #fff; /* Blanco para ítems de electivas individuales */
     border: 1px dashed #ffb3d9; /* Borde punteado para diferenciarlas */
@@ -190,6 +192,26 @@ h3 {
 .elective-item .elective-credits {
     color: #87355d; /* Color para los créditos de electivas */
 }
+
+/* Checkbox de las electivas */
+.elective-item label {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Asegura que la etiqueta ocupe todo el ancho */
+    cursor: pointer;
+}
+
+.elective-item input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2); /* Hace el checkbox un poco más grande */
+}
+
+.elective-item.approved {
+    background-color: #d4edda; /* Verde claro para electivas aprobadas */
+    border-color: #28a745;
+    color: #155724;
+}
+
 
 .remove-elective-btn {
     background: none;
@@ -246,14 +268,10 @@ h3 {
         padding: 12px;
     }
 
-    /* Ajuste para el label del checkbox */
-    .course-item label {
+    .course-item {
         flex-direction: column;
         align-items: flex-start;
-    }
-
-    .course-item input[type="checkbox"] {
-        margin-bottom: 5px; /* Espacio debajo del checkbox */
+        padding: 8px 12px;
     }
 
     .course-credits {
